@@ -118,6 +118,8 @@ header {
   max-width: 1240px;
   background-color: var(--clr-blur);
   backdrop-filter: blur(22px);
+
+  animation: appear-from-top .3s forwards;
 }
 .logo {
   flex: 1;
@@ -362,10 +364,12 @@ nav {
   align-items: center;
   min-height: 600px;
   height: 100vh;
-  max-height: 900px;
+  max-height: 740px;
 }
 #hero .info {
   flex: 1;
+  opacity: 0;
+  animation: appear-from-left .3s .3s forwards;
 
   p:first-child {
     /* Use both -webkit-text-stroke and the standard text-stroke for better browser support */
@@ -400,6 +404,8 @@ nav {
 }
 #hero .image-box {
   position: relative;
+  opacity: 0;
+  animation: appear-from-right .3s .6s forwards;
 
   &::after {
     content: "";
@@ -671,3 +677,51 @@ nav {
   }
 }
 /* hero end */
+
+
+
+
+/* --------------- */
+/* Animations -    */
+/* --------------- */
+
+@keyframes appear-from-top {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  } 
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes appear-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes appear-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes appear-scaling {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  } 
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
