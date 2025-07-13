@@ -3,13 +3,30 @@
 /* --------------- */
 :root {
   /* Dark theme colors */
-  --clr-main-first: #9ee50f;
+  --clr-main-first: #56df5b;
+  --clr-main-first: #64FFDA;
+  --clr-main-first: #00695C;
+  --clr-main-first: #40E0D0;
+  --clr-main-first: #FB8C00;
+  --clr-main-first: #763C28;
+  --clr-main-first: #33691E;
+  --clr-main-first: #81c7e1;
+  --clr-main-first: #6ec0de;
   /* --clr-blur: rgba(158, 229, 15, 0.1); */
-  --clr-blur: rgba(255, 255, 255, .1);
+  /* --clr-blur: rgba(255, 255, 255, .1); */
+  --clr-blur: #b1a3a30f;
   --clr-main-second: #152310;
   --clr-neutral-first: #0c0d08;
   --clr-neutral-second: #1a1a1a;
   --clr-text-first: #fff;
+
+
+  /* --clr-main-first: #1F3438;
+  --clr-blur: rgba(44, 42, 42, 0.1);
+  --clr-main-second: #152310;
+  --clr-neutral-first: white;
+  --clr-neutral-second: #1a1a1a;
+  --clr-text-first: #1a1a1a; */
 
   /* Fonts */
   --font-first: "Inter", sans-serif;
@@ -69,10 +86,13 @@ body {
   background-color: var(--clr-neutral-first);
   color: var(--clr-text-first);
   height: 1000pc;
+  position: relative;
+  overflow-x: hidden;
 }
 /* container */
 .container {
   margin: 0 auto;
+  position: relative;
 }
 @media (max-width: 600px) {
   .container {
@@ -105,7 +125,6 @@ body {
   }
 }
 
-
 /* header start */
 header {
   display: flex;
@@ -117,7 +136,7 @@ header {
   width: calc(100vw - 10vw);
   max-width: 1240px;
   background-color: var(--clr-blur);
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(20px);
 
   animation: appear-from-top .3s forwards;
 }
@@ -364,7 +383,6 @@ nav {
   align-items: center;
   min-height: 600px;
   height: 100vh;
-  max-height: 740px;
 }
 #hero .info {
   flex: 1;
@@ -373,19 +391,19 @@ nav {
 
   p:first-child {
     /* Use both -webkit-text-stroke and the standard text-stroke for better browser support */
-    -webkit-text-stroke: 2px #fff;
-    text-stroke: 2px #fff; /* Not yet supported in Firefox as of 2024 */
+    -webkit-text-stroke: 2px var(--clr-text-first);
+    text-stroke: 2px var(--clr-text-first); /* Not yet supported in Firefox as of 2024 */
     color: transparent;
     font-weight: var(--font-extra-bold);
     line-height: 1;
     /* For Firefox fallback, use text-shadow to simulate stroke */
-    @supports not (-webkit-text-stroke: 2px #fff) {
-      color: #fff;
+    @supports not (-webkit-text-stroke: 2px var(--clr-text-first)) {
+      color: var(--clr-text-first);
       text-shadow:
-        -2px 0 #fff,
-        0 2px #fff,
-        2px 0 #fff,
-        0 -2px #fff;
+        -2px 0 var(--clr-text-first),
+        0 2px var(--clr-text-first),
+        2px 0 var(--clr-text-first),
+        0 -2px var(--clr-text-first);
       /* You may want to adjust the shadow for a better effect */
     }
   }
@@ -429,7 +447,7 @@ nav {
     bottom: 4%;
   }
 
-  span.circle {
+  span.shape {
     position: absolute;
     z-index: -1;
     border-radius: 6px;
@@ -445,8 +463,10 @@ nav {
     max-width: 100%;
     position: relative;
     z-index: 3;
+    opacity: 0;
   }
 }
+
 
 @media (max-width: 600px) {
   body {
@@ -496,7 +516,7 @@ nav {
       bottom: 4%;
     }
   
-    span.circle {
+    span.shape {
       border-radius: 6px;
       width: 160px;
       top: 20%;
@@ -539,7 +559,7 @@ nav {
       bottom: 4%;
     }
   
-    span.circle {
+    span.shape {
       border-radius: 6px;
       width: 160px;
       top: 20%;
@@ -582,7 +602,7 @@ nav {
       bottom: 4%;
     }
   
-    span.circle {
+    span.shape {
       border-radius: 6px;
       width: 160px;
       top: 20%;
@@ -625,7 +645,7 @@ nav {
       bottom: 4%;
     }
   
-    span.circle {
+    span.shape {
       border-radius: 6px;
       width: 160px;
       top: 20%;
@@ -636,6 +656,7 @@ nav {
 @media (min-width: 1200px) {
   #hero .container {
     gap: 32px;
+    max-height: 740px;
   }
   #hero .info {
     p:first-child {
@@ -668,7 +689,7 @@ nav {
       bottom: 4%;
     }
   
-    span.circle {
+    span.shape {
       border-radius: 6px;
       width: 160px;
       top: 20%;
@@ -678,7 +699,251 @@ nav {
 }
 /* hero end */
 
+/* about start */
+#about {
+  position: relative;
+  opacity: 0;
 
+  & .shape {
+    width: 36vw;
+    height: 104%;
+    top: -2%;
+    background-color: transparent;
+    z-index: -1;
+    position: absolute;
+    border-bottom: none !important;
+    border-right: none !important;
+    overflow: hidden;
+
+    span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: inherit;
+      border: inherit;
+      border-radius: inherit;
+      display: block;
+    }
+  }
+}
+#about h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: fit-content;
+  color: var(--clr-text-first);
+  position: relative;
+  overflow: hidden;
+
+  span {
+    width: fit-content;
+
+    &::after {
+      content: "";
+      display: none;
+      top: 50%;
+      border-radius: 60px;
+      background-color: var(--clr-main-first);
+      position: absolute;
+      transition: .3s;
+      z-index: -1;
+    }
+
+  }
+
+  &:hover {
+    span {
+      &::after {
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+#about .description {
+  width: 80%;
+  min-width: 280px;
+  margin: auto;
+  background-color: var(--clr-blur);
+  backdrop-filter: blur(16px);
+  position: relative;
+  opacity: 1;
+
+  p {
+    color: #ddd;
+    font-weight: 300;
+  }
+
+  span {
+    color: var(--clr-main-first);
+    color: var(--clr-text-first);
+    border-bottom: 1px solid var(--clr-main-first);
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 600px) {
+  #about {
+    & .shape {
+      display: none;
+      left: 70vw;
+      border-top-left-radius: 54px;
+      border: 8px solid var(--clr-main-first);
+      span {
+        top: 13px;
+        left: 13px;
+      }
+    }
+  }
+  #about .container {
+    padding: 30px 0;
+  }
+  #about h2 {
+    letter-spacing: 4px;
+    font-size: 28px;
+    margin: 0 auto 20px;
+    padding: 0px 0px;
+    span {
+      &::after {
+        width: 7px;
+        height: 9px;
+        left: 31%;
+        transform: translate(-37%, -50%); 
+      }
+    }
+  
+    &:hover {
+      span {
+        &::after {
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  #about .description {
+    border-radius: 8px;
+    padding: 30px 28px;
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      max-width: 94%;
+      font-size: 12px;
+    }
+  }
+}
+@media (min-width: 600px) {
+  #about {
+    & .shape {
+      left: 70vw;
+      border-top-left-radius: 54px;
+      border: 8px solid var(--clr-main-first);
+      span {
+        top: 13px;
+        left: 13px;
+      }
+    }
+  }
+  #about .container {
+    padding: 40px 0;
+  }
+  #about h2 {
+    letter-spacing: 4px;
+    font-size: 32px;
+    margin: 0 auto 28px;
+    padding: 16px 28px;
+    span {
+      &::after {
+        width: 8px;
+        height: 10px;
+        left: 35%;
+        transform: translate(-29%, -50%);
+      }
+    }
+  
+    &:hover {
+      span {
+        &::after {
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  #about .description {
+    border-radius: 8px;
+    padding: 30px 28px;
+    p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      max-width: 94%;
+      font-size: 14px;
+    }
+  }
+}
+@media (min-width: 992px) {
+  #about {
+    & .shape {
+      left: 66vw;
+      border-top-left-radius: 60px;
+      border: 8px solid var(--clr-main-first);
+      span {
+        top: 16px;
+        left: 16px;
+      }
+    }
+  }
+  #about .container {
+    padding: 60px 0;
+  }
+  #about h2 {
+    letter-spacing: 4px;
+    font-size: 36px;
+    margin: 0 auto 38px;
+    padding: 16px 28px;
+    span {
+      &::after {
+        width: 9px;
+        height: 12px;
+        left: 35%;
+        transform: translate(-38%, -50%);
+      }
+    }
+  
+    &:hover {
+      span {
+        &::after {
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  #about .description {
+    border-radius: 10px;
+    padding: 34px 30px;
+    p {
+      margin-bottom: 14px;
+      line-height: 1.6;
+      max-width: 94%;
+      font-size: 16px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  #about h2 {
+    font-size: 40px;
+    span {
+      &::after {
+        width: 11px;
+        height: 14px;
+        left: 35%;
+        transform: translate(-39%, -50%);
+      }
+    }
+  }
+}
+/* about end */
 
 
 /* --------------- */
@@ -695,6 +960,16 @@ nav {
     transform: translate(-50%, 0);
   }
 }
+@keyframes appear-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes appear-from-left {
   from {
     opacity: 0;
@@ -702,7 +977,7 @@ nav {
   } 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 @keyframes appear-from-right {

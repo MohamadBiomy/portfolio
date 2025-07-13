@@ -1,1 +1,7 @@
   --clr-main-first-01: rgba(158, 229, 255, 1);
+
+
+    --border-radius: 60px;
+#9ee50f
+
+#56df5b
