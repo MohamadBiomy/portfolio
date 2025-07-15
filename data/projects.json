@@ -1,0 +1,37 @@
+[
+  {
+    "caption": "Space Tourism Website",
+    "description": "A 4‑page space‑themed website. It’s fully responsive and includes tabs, navigation, and a clean design.",
+    "image": "../images/project-1.jpg",
+    "repo": "https://github.com/MohamadBiomy/space-multi-page",
+    "liveSite": "https://mohamadbiomy.github.io/space-multi-page/"
+  },
+  {
+    "caption": "Manage Landing Page",
+    "description": "A landing page with a clean layout, feature sections, and a modern design that adapts to all screen sizes.",
+    "image": "../images/project-2.jpg",
+    "repo": "https://github.com/MohamadBiomy/manage-landing-page",
+    "liveSite": "https://mohamadbiomy.github.io/manage-landing-page/"
+  },
+  {
+    "caption": "Bookmark Landing Page",
+    "description": "A simple landing page that highlights bookmark features and smooth call‑to‑action sections.",
+    "image": "../images/project-3.jpg",
+    "repo": "https://github.com/MohamadBiomy/bookmark-landing-page",
+    "liveSite": "https://mohamadbiomy.github.io/bookmark-landing-page/"
+  },
+  {
+    "caption": "Room Homepage",
+    "description": "A stylish homepage for a furniture brand, featuring image sliders and great layouts for an engaging user experience.",
+    "image": "../images/project-4.jpg",
+    "repo": "https://github.com/MohamadBiomy/room-home-page",
+    "liveSite": "https://mohamadbiomy.github.io/room-home-page/"
+  },
+  {
+    "caption": "Crowdfunding Product Page",
+    "description": "A modern product page simulating a crowdfunding campaign, with pledge tiers, progress bar, and clean visuals.",
+    "image": "../images/project-5.jpg",
+    "repo": "https://github.com/MohamadBiomy/crowdfunding",
+    "liveSite": "https://mohamadbiomy.github.io/crowdfunding/"
+  }
+]
