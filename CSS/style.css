@@ -182,6 +182,7 @@ nav {
     position: relative;
     overflow: hidden;
     transition: .3s;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -209,7 +210,7 @@ nav {
   header {
     width: calc(100vw - 30px);
     top: 16px;
-    padding: 14px 2vw;
+    padding: 14px;
     border-radius: 6px;
   }
   .logo {
@@ -418,6 +419,11 @@ nav {
     color: var(--clr-text-first);
     opacity: .8;
     
+    strong {
+      color: var(--clr-text-first);
+      font-weight: 500;
+      border-bottom: 1px solid var(--clr-main-first);
+    }
   }
 }
 #hero .image-box {
@@ -497,7 +503,7 @@ nav {
   }
   #hero .image-box {
     width: 70%;
-    min-width: 300px;
+    max-width: 300px;
     margin-top: 18px;
     padding: 0 28px;
   
@@ -518,7 +524,7 @@ nav {
   
     span.shape {
       border-radius: 6px;
-      width: 160px;
+      width: 50%;
       top: 20%;
       transform: translate(20%, -30%);
     }
@@ -702,11 +708,10 @@ nav {
 /* about start */
 #about {
   position: relative;
-  opacity: 0;
 
-  & .shape {
+  .shape {
     width: 36vw;
-    height: 104%;
+    height: 100%;
     top: -2%;
     background-color: transparent;
     z-index: -1;
@@ -725,6 +730,14 @@ nav {
       display: block;
     }
   }
+  /* .shape-2 {
+    transform: rotateX(180deg) rotateZ(90deg);
+    left: unset !important;
+    top: unset !important;
+    height: 100%;
+    right: 49%;
+    bottom: -34%;
+  } */
 }
 #about h2 {
   text-align: center;
@@ -945,6 +958,167 @@ nav {
 }
 /* about end */
 
+/* qualities star */
+.qualities-container {
+  h3 {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--clr-text-first);
+  }
+}
+.qualities {
+  display: grid;
+
+  .qual {
+    background-color: var(--clr-blur);
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: start;
+    color: var(--clr-text-first);
+
+    h4 {
+      font-weight: 500;
+      letter-spacing: .4px;
+      border-bottom: 1px solid var(--clr-main-first);
+      width: fit-content;
+    }
+
+    p {
+      color: #ddd;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .qualities-container {  
+    margin-top: 40px;
+  
+    h3 {
+      margin-bottom: 22px;
+      font-size: 17px;
+    }
+  }
+  .qualities {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  
+    .qual {
+      gap: 14px;
+      padding: 22px;
+      border-radius: 8px;
+      flex-direction: column;
+  
+      .icon {
+        width: fit-content;
+        margin: auto;
+      }
+
+      h4 {
+        font-size: 16px;
+        margin: 0 auto 14px;
+      }
+  
+      p {
+        line-height: 1.6;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media (min-width: 600px) {
+  .qualities-container {  
+    margin-top: 40px;
+  
+    h3 {
+      margin-bottom: 26px;
+      font-size: 18px;
+    }
+  }
+  .qualities {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  
+    .qual {
+      gap: 16px;
+      padding: 22px;
+      border-radius: 8px;
+  
+      h4 {
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+  
+      p {
+        line-height: 1.6;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .qualities-container {  
+    margin-top: 60px;
+  
+    h3 {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+  .qualities {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  
+    .qual {
+      gap: 16px;
+      padding: 22px;
+      border-radius: 8px;
+  
+      h4 {
+        margin-bottom: 14px;
+        font-size: 17px;
+      }
+  
+      p {
+        line-height: 1.6;
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .qualities-container {
+    margin-top: 80px;
+  
+    h3 {
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+  }
+  .qualities {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  
+    .qual {
+      gap: 20px;
+      padding: 26px;
+      border-radius: 8px;
+  
+      h4 {
+        margin-bottom: 16px;
+        font-size: 18px;
+      }
+  
+      p {
+        line-height: 1.6;
+        font-size: 16px;
+      }
+    }
+  }
+}
+/* qualities end */
 
 /* --------------- */
 /* Animations -    */
