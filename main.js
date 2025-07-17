@@ -4,6 +4,7 @@ const animatedElements = document.querySelectorAll(".animated")
 const navigators = document.querySelectorAll("nav a")
 const sections = document.querySelectorAll("section")
 const projectsContainer = document.querySelector("#projects .projects-container")
+const copyEmail = document.querySelector(".copy")
 
 // Logo
 logo.addEventListener("click", () => {
@@ -51,6 +52,36 @@ fetch("./data/projects.json").then(res => res.json())
   })
 })
 
+// Coping email
+copyEmail.addEventListener("click", () => {
+  const email = "mohamadbiomy.dev@gmail.com";
+  // Use Clipboard API if available
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(email).then(() => {
+      copyEmail.dataset.message = "Copied!";
+      copyEmail.classList.add("copied");
+      setTimeout(() => {
+        copyEmail.dataset.message = "";
+        copyEmail.classList.remove("copied");
+      }, 2000);
+    });
+  } else {
+    // Fallback for older browsers
+    const tempInput = document.createElement("input");
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    copyEmail.dataset.message = "Copied!";
+    copyEmail.classList.add("copied");
+    setTimeout(() => {
+      copyEmail.dataset.message = "";
+      copyEmail.classList.remove("copied");
+    }, 2000);
+  }
+})
+
 
 
 /* --------- FUNCTIONS --------- */
@@ -65,7 +96,6 @@ function createProjectElement(data) {
   caption.innerHTML = data.caption
   projectCover.append(caption)
   projectCover.style.backgroundImage = `url(${data.image})`
-  console.log(data.image)
   const description = document.createElement("p")
   description.innerHTML = data.description
   project.append(description)

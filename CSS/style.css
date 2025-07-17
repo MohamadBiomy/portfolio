@@ -57,7 +57,16 @@ button {
   cursor: pointer;
 }
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+/* setting quran font */
+@font-face {
+  font-family: 'QuranFont';
+  src: url('./fonts/quran.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Custom Scrollbar Styles */
@@ -1356,6 +1365,276 @@ nav {
   }
 }
 /* projects end */
+
+/* contact start */
+#contact h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: fit-content;
+  color: var(--clr-text-first);
+  position: relative;
+  overflow: hidden;
+}
+#contact .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--clr-text-first);
+    border: 1px solid rgba(121, 110, 110, 0.276);
+    background-color: var(--clr-blur);
+    border-radius: 1000px;
+    width: 200px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: .3s;
+
+    &:hover {
+      border-color: var(--clr-text-first);
+    }
+
+    &:last-child:hover {
+      color: var(--clr-main-first);
+      border-color: var(--clr-main-first);
+    }
+  }
+}
+#contact .personal-info {
+  background-color: var(--clr-blur);
+  backdrop-filter: blur(16px);
+  width: 80%;
+  min-width: 280px;
+  border: 1px solid rgba(121, 110, 110, 0.276);
+  margin-left: auto;
+  margin-right: auto;
+  
+  p {
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;
+    margin-bottom: 16px;
+    color: var(--clr-text-first);
+    
+    i {
+      color: #ddd;
+    }
+
+    span {
+      position: relative;
+      width: fit-content;
+    }
+
+    .copy {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -45px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid rgba(121, 110, 110, 0.276);
+      padding: 8px;
+      /* transition: .3s; */
+
+      &::after {
+        content: attr(data-message);
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        font-size: 14px;
+        color: #ddd;
+        transform: translate(100%, -50%);
+      }
+
+      &:hover {
+        border-color: var(--clr-text-first);
+      }
+
+      &.copied {
+        background-color: var(--clr-text-first);
+        border-color: var(--clr-neutral-first);
+        color: var(--clr-neutral-first);
+      }
+    }
+  }
+}
+#contact .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--clr-text-first);
+    transition: .3s;
+    font-size: 24px;
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 2px;
+      background-color: var(--clr-main-first);
+      width: 0%;
+      border-radius: 2px;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, 4px);
+      transition: .3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: var(--clr-main-first);
+    }
+  }
+}
+#contact .copyright {
+  color: #ddd;
+  text-align: center;
+  margin: 24px 0 32px;
+  font-size: 15px;
+
+  i {
+    color: var(--clr-main-first);
+    transition: .3s;
+    margin: 0 8px;
+
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}
+#contact .quran {
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 6px;
+
+  color: var(--clr-text-first);
+  direction: rtl;
+  font-family: 'QuranFont', serif;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  --val: -11%;
+  
+  p {
+    position: relative;
+    height: 100%;
+    padding: 18px 24px;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--clr-blur);
+    backdrop-filter: blur(16px);
+    border-radius: 6px;
+  }
+
+  span {
+    bottom: 23%;
+    width: 15%;
+    height: 30%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: -1;
+    position: absolute;
+  }
+
+  span:first-of-type {
+    left: var(--val);
+  }
+
+  span:last-of-type {
+    right: var(--val);
+  }
+}
+
+@media (max-width: 600px) { 
+
+  #contact .container {
+    padding: 40px 0;
+  }
+  #contact h2 {
+    letter-spacing: 4px;
+    font-size: 28px;
+    margin: 0 auto 20px;
+    padding: 0px 0px;
+  }
+  #contact .links {
+    gap: 14px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  #contact .personal-info {
+    border-radius: 8px;
+    padding: 26px 20px;
+    margin: 30px auto 44px;
+
+    p {
+      font-size: 12px;
+      grid-template-columns: 26px auto;
+
+      .copy {
+        padding: 6px;
+        border-color: white;
+        font-size: 9px;
+        right: -29px ;
+      }
+    }
+
+
+  }
+}
+@media (min-width: 600px) {
+  #contact .container {
+    padding: 60px 0;
+  }
+  #contact h2 {
+    letter-spacing: 4px;
+    font-size: 32px;
+    margin: 0 auto 28px;
+    padding: 16px 28px;
+  }
+  #contact .personal-info {
+    border-radius: 8px;
+    padding: 30px 28px;
+    margin: 30px auto 44px;
+  }
+}
+@media (min-width: 992px) {
+  #contact .container {
+    padding: 60px 0 90px;
+  }
+  #contact h2 {
+    letter-spacing: 4px;
+    font-size: 36px;
+    margin: 0 auto 38px;
+    padding: 16px 28px;
+  }
+  #contact .personal-info {
+    border-radius: 10px;
+    padding: 34px 30px;
+    margin: 40px auto 60px;
+  }
+}
+@media (min-width: 1200px) {
+  #contact h2 {
+    font-size: 40px;
+  }
+}
+/* contact end */
+
+
+
 
 /* --------------- */
 /* Animations -    */
