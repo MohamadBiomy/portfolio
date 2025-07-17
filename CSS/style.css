@@ -1537,6 +1537,7 @@ nav {
     background-color: var(--clr-blur);
     backdrop-filter: blur(16px);
     border-radius: 6px;
+    border: 1px solid rgba(121, 110, 110, 0.276);
   }
 
   span {
