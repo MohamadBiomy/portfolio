@@ -807,7 +807,7 @@ nav {
 @media (max-width: 600px) {
   #about {
     & .shape {
-      display: none;
+      /* display: none; */
       left: 70vw;
       border-top-left-radius: 54px;
       border: 8px solid var(--clr-main-first);
@@ -1128,12 +1128,36 @@ nav {
 
 /* projects start */
 #projects {
+  position: relative;
 
   h2 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 400;
     color: var(--clr-text-first);
+  }
+
+  .shape {
+    width: 45vw;
+    height: 62%;
+    top: 38%;
+    background-color: transparent;
+    z-index: -1;
+    position: absolute;
+    border-bottom: none !important;
+    border-left: none !important;
+    overflow: hidden;
+    mask: linear-gradient(to top, transparent 0%, white);
+
+    span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: inherit;
+      border: inherit;
+      border-radius: inherit;
+      display: block;
+    }
   }
 
 }
@@ -1258,6 +1282,18 @@ nav {
 }
 @media (max-width: 600px) {
   #projects {
+    & .shape {
+      /* display: none; */
+      left: 0;
+      border-top-right-radius: 54px;
+      border: 8px solid var(--clr-main-first);
+      height: 96%;
+      top: 6%;
+      span {
+        top: 13px;
+        right: 13px;
+      }
+    }
     .container {
       padding: 40px 0;
     }
@@ -1271,6 +1307,15 @@ nav {
 }
 @media (min-width: 600px) {
   #projects {
+    & .shape {
+      left: 0;
+      border-top-right-radius: 54px;
+      border: 8px solid var(--clr-main-first);
+      span {
+        top: 13px;
+        right: 13px;
+      }
+    }
     .container {
       padding: 60px 0;
     }
@@ -1284,6 +1329,15 @@ nav {
 }
 @media (min-width: 992px) {
   #projects {
+    & .shape {
+      left: 0vw;
+      border-top-right-radius: 60px;
+      border: 8px solid var(--clr-main-first);
+      span {
+        top: 16px;
+        right: 16px;
+      }
+    }
     .container {
       padding: 90px 0;
     }
