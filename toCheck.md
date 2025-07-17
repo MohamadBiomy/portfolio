@@ -1,8 +1,8 @@
 # to discuss
-- color #
-- hello stroke #
+<!-- - color # -->
+<!-- - hello stroke # -->
 - projects section shape
 
 # projects to be responsive 
-- manage 
+<!-- - manage  -->
 - bookmark 
