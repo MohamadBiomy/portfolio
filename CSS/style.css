@@ -2,31 +2,12 @@
 /* Variables -     */
 /* --------------- */
 :root {
-  /* Dark theme colors */
-  --clr-main-first: #56df5b;
-  --clr-main-first: #64FFDA;
-  --clr-main-first: #00695C;
-  --clr-main-first: #40E0D0;
-  --clr-main-first: #FB8C00;
-  --clr-main-first: #763C28;
-  --clr-main-first: #33691E;
-  --clr-main-first: #81c7e1;
   --clr-main-first: #6ec0de;
-  /* --clr-blur: rgba(158, 229, 15, 0.1); */
-  /* --clr-blur: rgba(255, 255, 255, .1); */
   --clr-blur: #b1a3a30f;
   --clr-main-second: #152310;
   --clr-neutral-first: #0c0d08;
   --clr-neutral-second: #1a1a1a;
   --clr-text-first: #fff;
-
-
-  /* --clr-main-first: #1F3438;
-  --clr-blur: rgba(44, 42, 42, 0.1);
-  --clr-main-second: #152310;
-  --clr-neutral-first: white;
-  --clr-neutral-second: #1a1a1a;
-  --clr-text-first: #1a1a1a; */
 
   /* Fonts */
   --font-first: "Inter", sans-serif;
@@ -1519,7 +1500,6 @@ nav {
   margin: 0 auto;
   width: fit-content;
   border-radius: 6px;
-
   color: var(--clr-text-first);
   direction: rtl;
   font-family: 'QuranFont', serif;
