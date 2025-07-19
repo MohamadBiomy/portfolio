@@ -11,11 +11,11 @@
     "description": "A responsive landing page with a clean layout, feature sections, and a modern design that adapts to all screen sizes.",
     "image": "./images/project-2.jpg",
     "repo": "https://github.com/MohamadBiomy/manage-landing-page",
-    "liveSite": "https://mohamadbiomy.github.io/manage-landing-page/"
+    "liveSite": "https://mohamadbiomy-manage-page.netlify.app/"
   },
   {
     "caption": "Bookmark Landing Page",
-    "description": "A simple landing page that highlights bookmark features and smooth call‑to‑action sections.",
+    "description": "A responsive landing page that highlights bookmark features and smooth call‑to‑action sections.",
     "image": "./images/project-3.jpg",
     "repo": "https://github.com/MohamadBiomy/bookmark-landing-page",
     "liveSite": "https://mohamadbiomy.github.io/bookmark-landing-page/"
