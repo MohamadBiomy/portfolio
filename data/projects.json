@@ -1,5 +1,12 @@
 [
   {
+    "caption": "E-commerce Multi-page Website",
+    "description": "Exclusive is a responsive 11-page e-commerce website built with HTML, TailwindCSS, and Vanilla JS. It includes a dynamic product system, shopping cart, wishlist, reusable components, and JSON-based data handling with localStorage support.",
+    "image": "./images/exclusive.png",
+    "repo": "https://github.com/MohamadBiomy/Exclusive",
+    "liveSite": "https://mohamadbiomy-exclusive.netlify.app/"
+  },
+  {
     "caption": "Space Tourism Website",
     "description": "A 4‑page space‑themed website. It’s fully responsive and includes tabs, navigation, and a clean design.",
     "image": "./images/project-1.jpg",
